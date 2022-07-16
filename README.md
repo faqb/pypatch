@@ -19,24 +19,24 @@ Change `FILE_ATTRIBUTE` in `config.py` to set your own attribute name.
 ### Help menu
 Use `-h` after any option to get help menu.
 
-    ./pypatch -h
-    ./pypatch info -h
-    ./pypatch hide -h
-    ./pypatch reveal -h
+    ./pypatch.py -h
+    ./pypatch.py info -h
+    ./pypatch.py hide -h
+    ./pypatch.py reveal -h
 
 ### File info
 Use `info` option to get information about MP3 or WAV file.
 Shows size that can be hidden inside audio.
 
-    ./pypatch info -t audio.mp3
+    ./pypatch.py info -t audio.mp3
 
 ### Hide file
 Use `hide` to patch audio file and hide file inside.
 Result file must be only in WAV format.
 
-    ./pypatch hide -i audio.mp3 -o result_audio.wav -t image.png
+    ./pypatch.py hide -i audio.mp3 -o result_audio.wav -t image.png
 
 ### Reveal file
 Use `reveal` to get hidden file from audio file.
 
-    ./pypatch reveal -i audio.wav -o image.png
+    ./pypatch.py reveal -i audio.wav -o image.png
