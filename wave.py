@@ -42,5 +42,6 @@ class Wave(object):
         arr = self.channel_bytes(channel)
         columns = 8
         rows = math.ceil(arr.size / columns)
-        return np.pad(arr, (0, rows*columns - arr.size), 
-            mode="constant", constant_values=0).reshape(rows, columns)
+        return np.pad(
+            arr, (0, rows*columns - arr.size), mode="constant", constant_values=0
+        ).reshape(rows, columns)

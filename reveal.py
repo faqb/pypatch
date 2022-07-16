@@ -20,7 +20,7 @@ class Reveal(Wave):
         self.console = Console()
     
     def get_file(self) -> None:
-        data = []
+        data: list[list] = []
 
         # get hidden data size
         secret_bytes = self.reveal_file_bytes_length
@@ -64,7 +64,8 @@ class Reveal(Wave):
 
         return data 
     
-    def get(self, array: np.ndarray) -> list:
+    @staticmethod
+    def get(array: np.ndarray) -> int:
         data = []
         for byte in array:
             bits = "{:08b}".format(byte)

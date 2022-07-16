@@ -1,7 +1,7 @@
 FILE_ATTRIBUTE = "user.key"     # attribute must be "user.YOUR_NAME"
-TMP_FOLDER="/tmp"
-ORIGINAL_WAV_FILE="original.wav"
-TARGET_WAV_FILE="target.wav"
+TMP_FOLDER = "/tmp"
+ORIGINAL_WAV_FILE = "original.wav"
+TARGET_WAV_FILE = "target.wav"
 
 LOGO = """
  ██▓███ ▓██   ██▓ ██▓███   ▄▄▄     ▄▄▄█████▓ ▄████▄   ██░ ██ 

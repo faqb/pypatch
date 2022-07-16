@@ -32,7 +32,7 @@ class Convert(object):
             except ffmpy.FFRuntimeError as err:
                 console.print(f"[bold][red] {repr(err)}")
                 sys.exit(1)
-            except ffmpy.FFExecutableNotFoundError:
+            except ffmpy.FFExecutableNotFoundError as err:
                 console.print(f"[bold][red] {repr(err)}")
                 sys.exit(1)
             else:

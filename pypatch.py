@@ -1,4 +1,4 @@
-#!env/bin/python3
+#!/Users/yehor/fun/pyhide/env/bin/python3
 
 import os
 import convert
@@ -133,9 +133,7 @@ def parse() -> argparse.Namespace:
     )
     info_parser.set_defaults(func=info_option)
 
-    args = parser.parse_args()
-
-    return args
+    return parser.parse_args()
 
 
 if __name__ == "__main__":

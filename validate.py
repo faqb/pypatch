@@ -4,9 +4,9 @@ from pathlib import Path
 from rich.console import Console
 
 
-INPUT_FILE_ALLOWED_EXTENSTIONS = {".mp3", ".wav"}
-INPUT_FILE_EXTENSTIONS_REQUIRED_CONVERTING = {".mp3"}
-OUTPUT_FILE_ALLOWED_EXTENSTIONS = {".wav"}
+INPUT_FILE_ALLOWED_EXTENSIONS = {".mp3", ".wav"}
+INPUT_FILE_EXTENSIONS_REQUIRED_CONVERTING = {".mp3"}
+OUTPUT_FILE_ALLOWED_EXTENSIONS = {".wav"}
 
 
 class Validator(object):
@@ -19,7 +19,7 @@ class Validator(object):
         """
         Return: 
             True if validation was successful
-            False if need conversion
+            False if it needs conversion
             otherwise sys.exit
         """
         
@@ -32,14 +32,14 @@ class Validator(object):
         
         if input_file_path.is_file():
             if os.access(self.file, os.R_OK):
-                if input_file_ext in INPUT_FILE_ALLOWED_EXTENSTIONS:
-                    if input_file_ext in INPUT_FILE_EXTENSTIONS_REQUIRED_CONVERTING:
+                if input_file_ext in INPUT_FILE_ALLOWED_EXTENSIONS:
+                    if input_file_ext in INPUT_FILE_EXTENSIONS_REQUIRED_CONVERTING:
                         return False
                     return True
                 else:
                     Console(stderr=True).print(
                         f"[bold][red]This file type is not allowed.[/red]\n"
-                        f"Allowed extenstions: {list(INPUT_FILE_ALLOWED_EXTENSTIONS)}."
+                        f"Allowed extensions: {list(INPUT_FILE_ALLOWED_EXTENSIONS)}."
                     )
                     sys.exit(1)
             else:
@@ -63,12 +63,12 @@ class Validator(object):
 
         if os.access(os.path.dirname(os.path.abspath(self.file)), os.W_OK):
             if hide:
-                if output_file_ext in OUTPUT_FILE_ALLOWED_EXTENSTIONS:
+                if output_file_ext in OUTPUT_FILE_ALLOWED_EXTENSIONS:
                     return True
                 else:
                     Console(stderr=True).print(
                         f"[bold][red]This file type for output file is not allowed.[/red]\n"
-                        f"Allowed extenstions: {list(OUTPUT_FILE_ALLOWED_EXTENSTIONS)}."
+                        f"Allowed extensions: {list(OUTPUT_FILE_ALLOWED_EXTENSIONS)}."
                     )
                     sys.exit(1)
             else:
@@ -89,7 +89,7 @@ class Validator(object):
         
         if target_file_path.is_file():
             if os.access(self.file, os.R_OK):
-                if target_file_ext in INPUT_FILE_EXTENSTIONS_REQUIRED_CONVERTING:
+                if target_file_ext in INPUT_FILE_EXTENSIONS_REQUIRED_CONVERTING:
                     return False
                 return True
             else:

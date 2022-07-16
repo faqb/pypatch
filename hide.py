@@ -31,7 +31,6 @@ class Hide(File, Wave):
 		# get file to hide bytes and load them to array
 		file_to_hide_bytes = Reader(self.file_to_hide).read_file()
 
-
 		# if not enough space to hide the file -> exit
 		if not self.check_free_space(file_to_hide_bytes):
 			Console(stderr=True).print(f"[bold][red]Not enough space to hide file!")
@@ -61,11 +60,9 @@ class Hide(File, Wave):
 
 			else:
 				self.data = np.asarray(patched_bytes)
-  
- 
+
 		# write patched data to result file
 		Writer(self.result_file).write_wav(self.data, self.samplerate)
-
 
 	def check_free_space(self, file_to_hide_bytes):
 		if len(file_to_hide_bytes) > self.free_space():
@@ -79,7 +76,6 @@ class Hide(File, Wave):
 
 		size_to_hide = len(bytes_to_hide)
 		bytes_array = self.reshape_channel(channel)
-
 
 		with self.console.status(
 			f"[bold green]Patching {channel+1} channel bytes..."

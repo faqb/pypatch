@@ -14,7 +14,6 @@ class Info(object):
 
         self.table.add_column("Parameters", style="green", no_wrap=True)
         self.table.add_column("Values", style="", no_wrap=True)
-
         
     @property
     def name(self) -> str:
