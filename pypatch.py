@@ -1,4 +1,4 @@
-#!/Users/yehor/fun/pyhide/env/bin/python3
+#!env/bin/python3
 
 import os
 import convert
