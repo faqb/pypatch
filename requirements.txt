@@ -1,0 +1,10 @@
+cffi==1.15.1
+commonmark==0.9.1
+ffmpy==0.3.0
+numpy==1.23.1
+pycparser==2.21
+pydub==0.25.1
+Pygments==2.12.0
+rich==12.5.1
+SoundFile==0.10.3.post1
+xattr==0.9.9
