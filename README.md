@@ -5,10 +5,10 @@
 ## Installation
     git clone https://github.com/faqb/pypatch.git
     cd pypatch
-    python3 -m env venv
+    python3 -m venv env
     source env/bin/activate
     chmod +x pypatch.py
-    python3 install -r requirements.txt
+    pip3 install -r requirements.txt
 
 ## IMPORTANT
 To get the size of hidden file `pypatch` set file attribute `user.key`. Deleting this attribute will make impossible revealing source file.
